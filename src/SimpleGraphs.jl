@@ -2,10 +2,10 @@ module SimpleGraphs
 
 export adj
 
-abstract type AbstractSimpleGraph{T<:Integer} end
+abstract type AbstractSimpleGraph end
 
 adj(g::AbstractSimpleGraph) = g.fadjlist
-adj(g::AbstractSimpleGraph{T}, v::T) where {T<:Integer} = g.fadjlist[v]
+adj(g::AbstractSimpleGraph, v) = g.fadjlist[v]
 
 include("simplegraph.jl")
 include("simpledigraph.jl")

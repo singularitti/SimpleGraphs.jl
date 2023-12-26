@@ -1,14 +1,14 @@
 export nv, add_vertex!
 
-mutable struct SimpleGraph{T<:Integer} <: AbstractSimpleGraph{T}
-    ne::Int
-    fadjlist::Vector{Vector{T}}
+mutable struct SimpleGraph <: AbstractSimpleGraph
+    ne::Int64
+    fadjlist::Vector{Vector{Int64}}
 end
 SimpleGraph() = SimpleGraph(0, [])
 
 nv(g::SimpleGraph) = length(g.fadjlist)
 
-function add_vertex!(g::SimpleGraph{T}) where {T}
-    push!(g.fadjlist, Vector{T}())
+function add_vertex!(g::SimpleGraph)
+    push!(g.fadjlist, Vector{Int64}())
     return g
 end

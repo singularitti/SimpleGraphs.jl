@@ -1,5 +1,5 @@
-mutable struct SimpleDiGraph{T<:Integer} <: AbstractSimpleGraph{T}
+mutable struct SimpleDiGraph <: AbstractSimpleGraph
     ne::Int
-    fadjlist::Vector{Vector{T}} # [src]: (dst, dst, dst)
-    badjlist::Vector{Vector{T}} # [dst]: (src, src, src)
+    fadjlist::Vector{Vector{Int64}} # [src]: (dst, dst, dst)
+    badjlist::Vector{Vector{Int64}} # [dst]: (src, src, src)
 end
