@@ -9,7 +9,6 @@ struct Preorder <: Order end
 struct Postorder <: Order end
 
 abstract type TraversalAlgorithm end
-
 struct BreadthFirst <: TraversalAlgorithm end
 struct DepthFirst{S<:Style,O<:Order} <: TraversalAlgorithm end
 DepthFirst(::S, ::O) where {S<:Style,O<:Order} = DepthFirst{S,O}()
