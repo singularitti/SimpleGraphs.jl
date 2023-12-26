@@ -12,5 +12,6 @@ vertices(g::AbstractSimpleGraph) = Base.OneTo(nv(g))
 include("simpleedge.jl")
 include("simplegraph.jl")
 include("simpledigraph.jl")
+include("traversals.jl")
 
 end
