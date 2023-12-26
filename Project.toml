@@ -1,0 +1,13 @@
+name = "SimpleGraphs"
+uuid = "760a926b-9045-4782-8b11-1f678e5b8ae1"
+authors = ["singularitti <singularitti@outlook.com> and contributors"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
