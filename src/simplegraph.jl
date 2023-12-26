@@ -1,10 +1,13 @@
-export nv, add_vertex!
+export SimpleGraph, nv, add_vertex!
 
 mutable struct SimpleGraph <: AbstractSimpleGraph
     ne::Int64
     fadjlist::Vector{Vector{Int64}}
 end
-SimpleGraph() = SimpleGraph(0, [])
+function SimpleGraph(n::Integer=0)
+    fadjlist = collect(ntuple(Vector{Int64}(), n))  # Much faster than https://github.com/JuliaGraphs/Graphs.jl/blob/v1.9.0/src/SimpleGraphs/simplegraph.jl#L38
+    return SimpleGraph(n, fadjlist)
+end
 
 nv(g::SimpleGraph) = length(g.fadjlist)
 
